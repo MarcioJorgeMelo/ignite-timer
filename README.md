@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# ⏱️ Timer de Tarefas (Projeto de Estudos)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido exclusivamente para fins de estudo, com o objetivo de revisitar fundamentos do React e melhorar a forma como utilizo suas principais ferramentas no dia a dia.
 
-Currently, two official plugins are available:
+A proposta aqui não é criar algo pronto para produção, mas sim **voltar aos princípios**, reforçando conceitos essenciais e explorando abordagens mais eficientes e conscientes no desenvolvimento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📌 Sobre o projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A aplicação consiste em um **timer de tarefas**, permitindo:
 
-## Expanding the ESLint configuration
+* Criar timers com duração definida
+* Iniciar contagens regressivas
+* Visualizar múltiplos timers ativos simultaneamente
+* Persistir os timers da sessão utilizando **Local Storage**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧠 Foco de aprendizado
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Este projeto foi guiado principalmente pela necessidade de reforçar conceitos fundamentais do React, como:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📋 Formulários (Controlled vs Uncontrolled)
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+// Formas de gerar formulários
+// controlled x uncontrolled
+// mantenho o estado dos dados na aplicação x busco os dados apenas quando for usar as mesmas
+// maior controle dos dados e funcionalidade com os mesmos x menor perca de performance
+// formulários menores (login, cadastro, ...) x formulários com muitos inputs
 ```
+
+**Aprendizado:**
+Entender quando vale a pena ter controle total do estado vs quando otimizar performance evitando re-renderizações desnecessárias.
+
+---
+
+### 🔄 useReducer
+
+```js
+/* useReducer -> é um hook avançado do React, feito para lidar com estados complexos que necessitam de mudanças constantes, que demandam muitas funções.
+                     Ele espera actions específicas para lidar de forma diferente com a informação, como abaixo
+*/
+```
+
+**Aprendizado:**
+
+* Melhor organização de lógica de estado complexa
+* Separação clara entre ações e mutações
+* Escalabilidade na gestão de estados
+
+---
+
+## ⚙️ Funcionalidades
+
+* ⏳ Criação de timers
+* ▶️ Controle de execução
+* 📋 Listagem de timers ativos
+* 💾 Persistência com Local Storage
+
+---
+
+## 🛠️ Tecnologias
+
+* React
+* TypeScript
+* Local Storage API
+
+---
+
+## 💡 Objetivo final
+
+Mais do que o resultado visual ou funcional, o foco principal deste projeto é:
+
+> **Evoluir na tomada de decisão técnica dentro do React**, entendendo melhor quando e como usar cada ferramenta disponível.
+
+---
+
+## 📎 Observação
+
+Este repositório é apenas um espaço de aprendizado e experimentação.
+Pode conter refatorações frequentes, mudanças de abordagem e código não otimizado propositalmente para fins de estudo.
